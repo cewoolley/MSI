@@ -27,6 +27,8 @@ suffix=`head -n $SGE_TASK_ID $IDS | tail -n 1 | awk '{ print $2 }'`
 dest="/exports/igmm/eddie/tomlinson-Polyp-WGS-RNA/RHYTHM_BAM/"
 
 module load anaconda
+
+#use MSIsensor pro... Jia et al 2020
 source activate MSIsensor
 msisensor-pro msi -d /exports/igmm/eddie/tomlinson-lab/tools/msisensor_ref.list -n ${dest}${sample:0:6}N-sort.bam -t ${dest}$sample$suffix-sort.bam -o /exports/igmm/eddie/tomlinson-Polyp-WGS-RNA/RHYTHM_MSI/$sample$suffix
 
